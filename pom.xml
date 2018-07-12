@@ -64,6 +64,16 @@
 			<version>2.2.2</version>
 		</dependency>
 
+		<!-- DEPENDÊNCIAS DO POSTEGRESQL -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.2</version>
+		</dependency>
+
+
+
 		<!-- DEPENDÊNCIAS DO MYSQL -->
 
 		<dependency>
@@ -101,13 +111,21 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.3.1</version>
 		</dependency>
+		
+		<!-- DEPENDÊNCIAS DO JODATIME -->
+		<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.9</version>
+		</dependency>
 
 	</dependencies>
 
 	<build>
 		<plugins>
 
-<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.4</version>
@@ -115,7 +133,7 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-		
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -125,7 +143,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -135,18 +153,18 @@
 					<downloadJavadocs>true</downloadJavadocs>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.0</version>
-        <configuration>
-          <scanIntervalSeconds>3</scanIntervalSeconds>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<scanIntervalSeconds>3</scanIntervalSeconds>
 					<webApp>
 						<contextPath>/orcamentos</contextPath>
 					</webApp>
-        </configuration>
-      </plugin>
+				</configuration>
+			</plugin>
 
 		</plugins>
 	</build>
