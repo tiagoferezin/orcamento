@@ -9,44 +9,52 @@
 <!DOCTYPE html>
 
 <table id="example" class="display" style="width: 100%">
-			<thead>
-				<tr>
-					<th>Descricao</th>
-					<th>Quantidade</th>
-					<th>Unidade de medida</th>
-					<th>Valor unitario</th>
-					<th>Valor Total</th>
+	<thead>
+		<tr>
+			<th>Descricao</th>
+			<th>Quantidade</th>
+			<th>Unidade de medida</th>
+			<th>Valor unitario</th>
+			<th>Valor Total</th>
+			<th>Editar</th>
+			<th>Deletar</th>
 
-				</tr>
-			</thead>
-			<tbody>
+		</tr>
+	</thead>
+	<tbody>
 
-				<c:forEach items="${listaProdutos }" var="produto">
-					<tr>
-						<td>${produto.descricao }</td>
-						<td>${produto.quantidade }</td>
-						<td>${produto.unidadeDeMedida }</td>
-						<td>${produto.valorUnitario }</td>
-						<td>${produto.valorTotal }</td>
-					</tr>
+		<c:forEach items="${listaProdutos }" var="produto">
+			<tr data-id="${produto.idProduto }">
+				<td>${produto.descricao }</td>
+				<td>${produto.quantidade }</td>
+				<td>${produto.unidadeDeMedida }</td>
+				<td>${produto.valorUnitario }</td>
+				<td>${produto.valorTotal }</td>
+				<td><button type="button" class="btn btn-warning btn-editar">Editar</button></td>
+				<td><button type="button" class="btn btn-danger"
+						data-toggle="modal" data-target="#modalConfirmarExclusao">Deletar</button></td>
+			</tr>
 
-				</c:forEach>
+		</c:forEach>
 
-			</tbody>
-			<tfoot>
-				<tr>
-					<th>Descricao</th>
-					<th>Quantidade</th>
-					<th>Unidade de medida</th>
-					<th>Valor unitario</th>
-					<th>Valor Total</th>
-				</tr>
-				<tr>
-					<td colspan="5">
-						<button type="button" class="btn btn-primary" data-toggle="modal"
-							data-target="#modalAlterar">Cadastrar Produto</button>
-					</td>
-				</tr>
-			</tfoot>
-		</table>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Descricao</th>
+			<th>Quantidade</th>
+			<th>Unidade de medida</th>
+			<th>Valor unitario</th>
+			<th>Valor Total</th>
+			<th>Editar</th>
+			<th>Deletar</th>
+		</tr>
+		<tr>
+			<td colspan="7">
+				<button type="button" class="btn btn-primary" data-toggle="modal"
+					data-target="#modalAlterar" style="float: right;">Cadastrar
+					Produto</button>
+			</td>
+		</tr>
+	</tfoot>
+</table>
 

@@ -43,6 +43,8 @@
 
 
 	<jsp:include page="modalAlterar.jsp" />
+	
+	<jsp:include page="modalConfirmarExclusao.jsp" />
 
 	<!-- jQuery library -->
 	<script
@@ -58,6 +60,8 @@
 
 	<script type="text/javascript" src="${path}/static/js/produtos.js"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
 </body>
 </html>

@@ -6,14 +6,15 @@ package br.com.ribeiraoreefshop.orcamentos.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.ribeiraoreefshop.orcamentos.exceptions.ProdutoInvalidException;
 import br.com.ribeiraoreefshop.orcamentos.model.entity.Produto;
@@ -60,11 +61,23 @@ public class ProdutoController {
 
 			produtoRepositorio.save(produto);
 		}
-		
+
 		Iterable<Produto> listaProdutos = produtoRepositorio.findAll();
 		model.addAttribute("listaProdutos", listaProdutos);
 		model.addAttribute("listaUnidadeDeMedida", UnidadeDeMedida.values());
 		return "produto/tabelaProduto";
+	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "{idProduto}")
+	public ResponseEntity<String> deletarProduto(@PathVariable Long idProduto) {
+		System.out.println("Removendo");
+		try {
+			produtoRepositorio.delete(idProduto);
+			return new ResponseEntity<String>(HttpStatus.OK);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
+		}
 	}
 
 }

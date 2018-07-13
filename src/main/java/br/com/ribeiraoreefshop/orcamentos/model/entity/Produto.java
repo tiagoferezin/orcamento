@@ -21,7 +21,7 @@ public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idProduto;
 
 	@Column(nullable = false)
 	private String descricao;
@@ -45,16 +45,16 @@ public class Produto {
 	/**
 	 * @return the id
 	 */
-	public Long getId() {
-		return id;
+	public Long getIdProduto() {
+		return idProduto;
 	}
 
 	/**
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdProduto(Long idProduto) {
+		this.idProduto = idProduto;
 	}
 
 	/**
