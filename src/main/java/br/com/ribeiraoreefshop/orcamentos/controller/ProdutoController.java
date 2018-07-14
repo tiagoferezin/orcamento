@@ -81,7 +81,7 @@ public class ProdutoController {
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "{idProduto}")
 	public ResponseEntity<String> deletarProduto(@PathVariable Long idProduto) {
-		System.out.println("Removendo");
+		
 		try {
 			produtoRepositorio.delete(idProduto);
 			return new ResponseEntity<String>(HttpStatus.OK);

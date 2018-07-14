@@ -44,8 +44,8 @@
 
 		</div>
 	</c:if>
-	<section class="container" id="secao-produtos">
-		<jsp:include page="tabelaProduto.jsp" />
+	<section class="container" id="secao-clientes">
+		<jsp:include page="tabelaCliente.jsp" />
 	</section>
 
 
@@ -84,7 +84,7 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="${path}/static/js/produtos.js"></script>
+	<script type="text/javascript" src="${path}/static/js/clientes.js"></script>
 
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
