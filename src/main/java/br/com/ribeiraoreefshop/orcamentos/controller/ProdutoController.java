@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.ribeiraoreefshop.orcamentos.exceptions.ProdutoInvalidException;
 import br.com.ribeiraoreefshop.orcamentos.model.entity.Produto;
@@ -66,6 +67,16 @@ public class ProdutoController {
 		model.addAttribute("listaProdutos", listaProdutos);
 		model.addAttribute("listaUnidadeDeMedida", UnidadeDeMedida.values());
 		return "produto/tabelaProduto";
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "{idProduto}")
+	@ResponseBody
+	public Produto buscarProduto(@PathVariable Long idProduto) {
+		Produto produto = new Produto();
+
+		produto = produtoRepositorio.findOne(idProduto);
+
+		return produto;
 	}
 
 	@RequestMapping(method = RequestMethod.DELETE, value = "{idProduto}")

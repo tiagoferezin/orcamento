@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 
-<table id="example" class="display" style="width: 100%">
+<table id="tabela-produtos" class="display" style="width: 100%">
 	<thead>
 		<tr>
 			<th>Descricao</th>
@@ -31,7 +31,7 @@
 				<td>${produto.valorUnitario }</td>
 				<td>${produto.valorTotal }</td>
 				<td><button type="button" class="btn btn-warning btn-editar">Editar</button></td>
-				<td><button type="button" class="btn btn-danger"
+				<td><button type="button" class="btn btn-danger btn-deletar-tabela"
 						data-toggle="modal" data-target="#modalConfirmarExclusao">Deletar</button></td>
 			</tr>
 
