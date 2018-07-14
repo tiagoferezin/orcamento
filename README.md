@@ -1,2 +1,3 @@
 # orcamento
-Sistema de geração de pdf de orçamentos 
+Sistema web de geração de pdf de orçamentos 
+Tecnologias utilizadas: Java, Hibernate, Datatable, SpringMVC
